@@ -1,7 +1,7 @@
 import re
 import pandas as pd
 from pandas import DataFrame, Series
-ori_data = pd.read_excel("./JXdrought.xlsx",header=3,sheet_name=0)
+ori_data = pd.read_excel("./JX.xlsx",header=3,sheet_name=0)
 # Import data, put the third line as header
 from pypinyin import pinyin, lazy_pinyin, Style
 # Import pinyin script
@@ -363,6 +363,6 @@ df_t.loc["1908",['wanzai']]=1
 df_t.loc["1911",['lianhua']]=1
 df_t.loc["1671",['xinjian']]=1
 
-
-
 print(df_t)
+
+df_t.to_excel("./JXdrought.xlsx")
