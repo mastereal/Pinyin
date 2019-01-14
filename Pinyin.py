@@ -17,8 +17,8 @@ for county in countylist:
     countyname_pinyin_list=lazy_pinyin(county,strict=False) # County name is converted into pinyin, but put in the list
     countystr_t=" ".join(countyname_pinyin_list) # Combine the pinyin in the list (the element is charactor) to a word (county name) by blank
     print(countystr_t)
-    if re.match(r"(\w+\s\w+)(?:\sfu|\sxian|\szhi\sli\szhou|\sting|\szhou)",countystr_t)!=None:
-        countytitlebe=re.match(r"(\w+\s\w+)(?:\sfu|\sxian|\szhi\sli\szhou|\sting|\szhou)",countystr_t)
+    if re.match(r"(\w+\s\w+)(?:\sfu|\sxian|\szhi\sli\szhou|\sting|\szhou|zhi\sli\sting)",countystr_t)!=None:
+        countytitlebe=re.match(r"(\w+\s\w+)(?:\sfu|\sxian|\szhi\sli\szhou|\sting|\szhou|zhi\sli\sting)",countystr_t)
         countytitle=countytitlebe.group(1)
         # Check and match pinyin of county name with "fu, xian, zhou, ting, zhi li zhou" as level
     else:
@@ -365,4 +365,4 @@ df_t.loc["1671",['xinjian']]=1
 
 print(df_t)
 
-df_t.to_excel("./JXdrought.xlsx")
+#df_t.to_excel("./JXdrought.xlsx")
