@@ -24,6 +24,7 @@ for county in countylist:
     print(countystr_t)
     if re.match(r"(\w+\s\w+)(?:\sfu|\sxian|\szhi\sli\szhou|\sting|\szhou|\szhi\sli\sting)",countystr_t)!=None:
         countytitlebe=re.match(r"(\w+\s\w+)(?:\sfu|\sxian|\szhi\sli\szhou|\sting|\szhou|\szhi\sli\sting)",countystr_t)
+        pirnt(countytitlebe)
         countytitle=countytitlebe.group(1)
         # Check and match pinyin of county name with "fu, xian, zhou, ting, zhi li zhou" as level
     else:
@@ -86,6 +87,6 @@ alist=range(1368,1913)
 blist=[str(x) for x in alist]
 #print(blist)
 df_t=pd.DataFrame(columns=countylist_pinyin,index=blist)
-#print(df_t)
+print(df_t)
 
 #df_t.to_excel("./JS_default.xlsx")

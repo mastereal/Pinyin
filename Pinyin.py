@@ -14,7 +14,8 @@ countylist_pinyin=[]
 
 count=0
 for county in countylist:
-    countyname_pinyin_list=lazy_pinyin(county,strict=False) # County name is converted into pinyin, but put in the list
+    countyname_pinyin_list=lazy_pinyin(county,strict=False) # County name is converted into pinyin, but every charactor is put in the list
+    #print(countyname_pinyin_list)
     countystr_t=" ".join(countyname_pinyin_list) # Combine the pinyin in the list (the element is charactor) to a word (county name) by blank
     print(countystr_t)
     if re.match(r"(\w+\s\w+)(?:\sfu|\sxian|\szhi\sli\szhou|\sting|\szhou|zhi\sli\sting)",countystr_t)!=None:

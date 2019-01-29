@@ -86,6 +86,6 @@ alist=range(1368,1913)
 blist=[str(x) for x in alist]
 #print(blist)
 df_t=pd.DataFrame(columns=countylist_pinyin,index=blist)
-#print(df_t)
+print(df_t)
 
 #df_t.to_excel("./AH_default.xlsx")
