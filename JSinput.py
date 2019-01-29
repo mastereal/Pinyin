@@ -96,3 +96,4 @@ for ele in linelist:
                 print(recounty+" "+year)
 print(df_t)
 #print(countylist)
+#df_t.to_excel("./JS_test_freeze.xlsx")
