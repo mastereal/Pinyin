@@ -6,14 +6,14 @@ from google.cloud import translate  # Use google cloud API instead
 
 translate_client=translate.Client()
 
-ori_data = pd.read_excel("./AH.xlsx",header=3,sheet_name=0)
+ori_data = pd.read_excel("./AH.xlsx",header=3,sheet_name=0,index_col=0)
 # Import data, put the third line as header
 from pypinyin import pinyin, lazy_pinyin, Style
 # Import pinyin script
 # print(ori_data)
 # Print data
 countylist=list(ori_data.columns.str.strip())
-# print(countylist)
+print(countylist)
 countylist_pinyin=[]
 # Extract county from table
 

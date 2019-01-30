@@ -4,8 +4,8 @@ from pandas import DataFrame, Series
 from pypinyin import pinyin, lazy_pinyin, Style
 # Import pinyin script
 
-ori_data = pd.read_excel("./JS_default.xlsx",header=0,sheet_name=0)
-ori_data_AH = pd.read_excel("./AH_default.xlsx",header=0,sheet_name=0) # Requre Anhui province since Ming dynasty had different boundry 
+ori_data = pd.read_excel("./JS_default.xlsx",header=0,sheet_name=0,index_col=0)
+ori_data_AH = pd.read_excel("./AH_default.xlsx",header=0,sheet_name=0,index_col=0) # Requre Anhui province since Ming dynasty had different boundry 
 
 with open("flood.txt",'r',encoding="utf-8-sig") as f:
     linelist = f.readlines()

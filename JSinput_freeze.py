@@ -7,11 +7,12 @@ from pypinyin import pinyin, lazy_pinyin, Style
 ori_data = pd.read_excel("./JS_default.xlsx",header=0,sheet_name=0,index_col=0)
 ori_data_AH = pd.read_excel("./AH_default.xlsx",header=0,sheet_name=0,index_col=0) # Requre Anhui province since Ming dynasty had different boundry 
 
-with open("wind.txt",'r',encoding="utf-8-sig") as f:
+with open("freeze.txt",'r',encoding="utf-8-sig") as f:
     linelist = f.readlines()
     
 countylist=list(ori_data.columns.str.strip())
-countylistAH=list(ori_data_AH.columns.str.strip())
+countylistAH=list(ori_data_AH.columns.str.strip()) # 其中有 unnamed:0 这一项，需要手动去除 if no augument (index_col=0)
+#print(countylist)
 
 countylist[countylist.index("changzhou")]="zhangzhou"
 countylist[countylist.index("changzhou.1")]="changzhou"
@@ -143,7 +144,7 @@ for ele in linelist:
                         checklistAH.append(p.match(countypy))
                 if checklistAH==[None]*len(checklistAH):
                     print(recounty+" "+year)
-print(df_t)
+#print(df_t)
 #print(countylist)
-#df_t.to_excel("./JS_test_wind.xlsx")
-#df_t_AH.to_excel("./AH_test_wind.xlsx")
+#df_t.to_excel("./JS_test_freeze.xlsx")
+#df_t_AH.to_excel("./AH_test_freeze.xlsx")
